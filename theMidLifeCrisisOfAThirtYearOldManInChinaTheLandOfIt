@@ -1,0 +1,22 @@
+import stanford.karel.*;
+
+	public class CollectNewspaperKarel extends SuperKarel {
+		
+		public void run() {
+			sprint();
+			turnRight();
+			move();
+			turnLeft();
+			move();
+			pickBeeper();
+			turnAround();
+			sprint();
+			turnRight();
+			sprint();
+		}
+		private void sprint() {
+			while(frontIsClear()){
+				move();
+			}
+		}
+		}
