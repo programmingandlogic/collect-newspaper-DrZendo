@@ -1,0 +1,42 @@
+import stanford.karel.*;
+
+public class StoneMasonKarel extends SuperKarel {
+
+	public void run() {
+		buildBridge();
+		moveFour();
+		buildBridge();
+		moveFour();
+		buildBridge();
+		moveFour();
+		buildBridge();
+	}
+	
+	
+	private void sprint(){
+		while (frontIsClear()){
+			move();
+		}
+	}
+	private void buildBridge(){
+		turnLeft();
+		if (noBeepersPresent()){
+			putBeeper();
+		}
+		while (frontIsClear()){
+			move();
+			if (noBeepersPresent()){
+				putBeeper();
+			}
+		}
+			
+		turnAround();
+		sprint();
+		turnLeft();
+	}
+	private void moveFour(){
+		for (int i=0;i<4; i++){
+			move();
+		}
+	}
+}
